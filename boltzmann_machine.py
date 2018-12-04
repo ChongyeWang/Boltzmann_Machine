@@ -94,7 +94,9 @@ for theta in [-1, 0, 0.2, 1, 2]:
 					if j + 1 <= len(hidden[0]) - 1:
 						power_sum1 += theta * (2 * hidden[i][j + 1] - 1)
 
-					power_sum2 = theta * noise_train[idx][i][j]
+					hx = 0.2
+					
+					power_sum2 = hx * noise_train[idx][i][j]
 
 					top = (math.e)**(power_sum1 + power_sum2)
 
@@ -167,36 +169,36 @@ for theta in [-1, 0, 0.2, 1, 2]:
 		x.append(fpr[0])
 		y.append(tpr[0])
 
-	#################################################
+	################################################
 
-	# min_list = [binary_train[min_index], noise_train[min_index], result[min_index]]
-	# max_list = [binary_train[max_index], noise_train[max_index], result[max_index]]
+	min_list = [binary_train[min_index], noise_train[min_index], result[min_index]]
+	max_list = [binary_train[max_index], noise_train[max_index], result[max_index]]
 
-	# fig = plt.figure()
-	# ax1 = fig.add_subplot(231)
-	# ax2 = fig.add_subplot(232)
-	# ax3 = fig.add_subplot(233)
+	fig = plt.figure()
+	ax1 = fig.add_subplot(231)
+	ax2 = fig.add_subplot(232)
+	ax3 = fig.add_subplot(233)
 
-	# ax1.imshow(min_list[0])
-	# ax2.imshow(min_list[1])
-	# ax3.imshow(min_list[2])
+	ax1.imshow(min_list[0])
+	ax2.imshow(min_list[1])
+	ax3.imshow(min_list[2])
 
-	# ax4 = fig.add_subplot(234)
-	# ax5 = fig.add_subplot(235)
-	# ax6 = fig.add_subplot(236)
+	ax4 = fig.add_subplot(234)
+	ax5 = fig.add_subplot(235)
+	ax6 = fig.add_subplot(236)
 
-	# ax4.imshow(max_list[0])
-	# ax5.imshow(max_list[1])
-	# ax6.imshow(max_list[2])
+	ax4.imshow(max_list[0])
+	ax5.imshow(max_list[1])
+	ax6.imshow(max_list[2])
 
-	# plt.show()
+	plt.show()
 
-	# ###################################################
-	# fig2 = plt.figure(figsize=(10, 10))
-	# for i in range(1, 31):
-	# 	ax = fig2.add_subplot(10, 3, i)
-	# 	ax.imshow(all_30[i - 1])
-	# plt.show()
+	###################################################
+	fig2 = plt.figure(figsize=(10, 10))
+	for i in range(1, 31):
+		ax = fig2.add_subplot(10, 3, i)
+		ax.imshow(all_30[i - 1])
+	plt.show()
 
 
 labels = [-1, 0, 0.2, 1, 2]
